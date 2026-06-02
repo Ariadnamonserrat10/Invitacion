@@ -8,11 +8,15 @@ export default function WelcomeSection() {
     <section id="welcome" className="section-container relative">
       <Sparkles count={18} />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: "-80px" }} transition={{ duration: 0.8, ease: "easeOut" }}>
-          <p className="text-xs md:text-sm tracking-[0.4em] uppercase font-[var(--font-cinzel)] mb-10" style={{ color: "#3A5A7A" }}>
-            — Una historia mágica —
-          </p>
-        </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          className="text-xs md:text-sm tracking-[0.4em] uppercase font-[var(--font-cinzel)] mb-10"
+          style={{ color: "#3A5A7A" }}
+        >
+          — Una historia mágica —
+        </motion.p>
 
         <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ margin: "-80px" }} transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
           className="h-px w-28 mx-auto mb-12" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent)" }} />

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { getAudio, playAudio, pauseAudio, isAudioPlaying } from "@/lib/audio";
+import { playAudio, pauseAudio, isAudioPlaying } from "@/lib/audio";
 
 export default function MusicControl() {
   const [isPlaying, setIsPlaying] = useState(false);

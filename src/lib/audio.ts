@@ -16,7 +16,6 @@ export function resetAudio() {
     audio.currentTime = 0;
   }
   audio = null;
-  getAudio();
 }
 
 export function playAudio(): Promise<void> {
@@ -28,7 +27,8 @@ export function pauseAudio() {
 }
 
 export function isAudioPlaying(): boolean {
-  return audio ? !audio.paused : false;
+  const a = getAudio();
+  return !a.paused;
 }
 
 let autoplayCleanup: (() => void) | null = null;

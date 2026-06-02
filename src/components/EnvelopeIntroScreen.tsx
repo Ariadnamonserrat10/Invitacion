@@ -9,7 +9,7 @@ function makeParticle(container: HTMLElement, css: string): HTMLDivElement {
   const el = document.createElement("div"); el.style.cssText = css; container.appendChild(el); return el;
 }
 
-export default function EnvelopeIntroScreen() {
+export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const portalRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,6 @@ export default function EnvelopeIntroScreen() {
   const dividerRef = useRef<HTMLDivElement>(null);
 
   const [mounted, setMounted] = useState(false);
-  const [visible, setVisible] = useState(true);
 
   /* Audio — fresh start on mount + autoplay fallback */
   useEffect(() => {
@@ -28,18 +27,19 @@ export default function EnvelopeIntroScreen() {
     resetAudio();
     playAudio().catch(() => {});
     const cleanup = setupAutoplay();
-    return () => { cleanup(); resetAudio(); };
+    return () => { cleanup(); };
   }, []);
 
   /* GSAP Timeline */
   useEffect(() => {
-    if (!mounted || !visible) return;
+    if (!mounted) return;
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setVisible(false);
+        onDone?.();
       }
     });
+    const safety = setTimeout(() => onDone?.(), 11000);
 
     tl.set(containerRef.current, { autoAlpha: 1 });
     tl.set(portalRef.current, { scale: 0, opacity: 0 });
@@ -162,10 +162,10 @@ export default function EnvelopeIntroScreen() {
     /* Final fade-out */
     tl.to(containerRef.current, { opacity: 0, duration: 0.8, ease: "power2.in" }, 8.5);
 
-    return () => { tl.kill(); };
+    return () => { tl.kill(); clearTimeout(safety); };
   }, [mounted]);
 
-  if (!mounted || !visible) return null;
+  if (!mounted) return null;
 
   return (
     <div ref={containerRef} className="fixed inset-0 z-[90] flex items-center justify-center overflow-hidden invisible opacity-0">

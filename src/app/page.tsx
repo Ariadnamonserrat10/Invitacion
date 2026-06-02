@@ -15,7 +15,6 @@ import TimelineSection from "@/components/TimelineSection";
 import LocationSection from "@/components/LocationSection";
 import ThankYouSection from "@/components/ThankYouSection";
 import FireworksEnding from "@/components/FireworksEnding";
-import MusicControl from "@/components/MusicControl";
 import { ConfettiBurst, Bubbles, SparkleTrail, Butterflies } from "@/components/SectionEffects";
 
 function SectionEffect({ children, effect }: { children: ReactNode; effect: string }) {
@@ -59,7 +58,7 @@ export default function Home() {
     <>
       {showDashboard && <DashboardIntro onStart={() => { setShowDashboard(false); setShowEnvelope(true); }} />}
 
-      {showEnvelope && <EnvelopeIntroScreen />}
+      {showEnvelope && <EnvelopeIntroScreen onDone={() => setShowEnvelope(false)} />}
 
       <MagicalBackground />
 
@@ -75,10 +74,8 @@ export default function Home() {
         <SectionEffect effect="sparkles"><ThankYouSection /></SectionEffect>
         <FireworksEnding />
 
-        <MusicControl />
-
         <footer className="relative z-10 py-8 text-center px-6">
-          <p className="text-[14px] font-[var(--font-poppins)] tracking-wider" style={{ color: "rgba(58,90,122,0.2)" }}>
+          <p className="text-[10px] md:text-[12px] font-[var(--font-poppins)] tracking-wider" style={{ color: "rgba(58,90,122,0.2)" }}>
             — Esta invitación fue hecha con amor para michi —
           </p>
         </footer>

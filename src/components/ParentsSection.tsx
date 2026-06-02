@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import Sparkles from "./Sparkles";
 
 const parents = [
-  { name: "Sarahi Aparicio Gomez", role: "Mamá", desc: "Con amor y dedicación", isMemorial: false },
+  { name: "Sarahi Aparicio Gómez", role: "Mamá", desc: "Con amor y dedicación", isMemorial: false },
   { name: "Jose Carlos Velasco España", role: "Papá", desc: "Con amor eterno", isMemorial: true },
 ];
 
 const godparents = [
-  { name: "Leticia Aparicio Velasco", role: "Madrina", desc: "Con cariño y bendiciones", isMemorial: false },
+  { name: "Leticia Aparicio Gómez", role: "Madrina", desc: "Con cariño y bendiciones", isMemorial: false },
   { name: "Mauricio Garnica", role: "Padrino", desc: "Con orgullo y alegría", isMemorial: false },
 ];
 
@@ -120,7 +120,7 @@ export default function ParentsSection() {
         </motion.div>
 
         <div className="mb-24">
-          <p className="text-center text-[10px] tracking-[0.3em] uppercase font-[var(--font-cinzel)] mb-10" style={{ color: "rgba(58,90,122,0.45)" }}>— Padres —</p>
+          <p className="text-center text-[10px] tracking-[0.3em] uppercase font-[var(--font-cinzel)] mb-16" style={{ color: "rgba(58,90,122,0.45)" }}>— Padres —</p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 max-w-4xl mx-auto">
             {parents.map((p, i) => <PersonCard key={p.name} {...p} index={i} variant="parent" />)}
           </div>
