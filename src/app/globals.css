@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-light: #E3F0FA;
+  --color-sky-soft: #C3E0F4;
+  --color-sky-dark: #3A5A7A;
+  --color-sky-text: #1E3A5F;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F0D68A;
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-allura: "Allura", cursive;
+  --font-dancing: "Dancing Script", cursive;
+  --font-cinzel: "Cinzel", serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-parisienne: "Parisienne", cursive;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: auto; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #1E3A5F;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Fondo marmóreo creativo unificado - fluye sin cortes */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    /* Base */
+    #E6F0F8
+    /* Vetas grandes de mármol */
+    radial-gradient(ellipse at 15% 20%, #DAE9F5 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 30%, #C3E0F4 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 70%, #D6EAF8 0%, transparent 40%),
+    radial-gradient(ellipse at 30% 85%, #EAF3FC 0%, transparent 35%),
+    radial-gradient(ellipse at 75% 15%, #C3E0F4 0%, transparent 30%),
+    /* Vetas orgánicas onduladas */
+    radial-gradient(ellipse at 20% 50%, rgba(195,224,244,0.3) 0%, transparent 40%),
+    radial-gradient(ellipse at 65% 55%, rgba(222,233,245,0.25) 0%, transparent 35%),
+    radial-gradient(ellipse at 45% 25%, rgba(218,233,245,0.2) 0%, transparent 30%),
+    radial-gradient(ellipse at 80% 75%, rgba(227,240,250,0.2) 0%, transparent 35%),
+    /* Toques dorados sutiles */
+    radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.02) 0%, transparent 40%);
+}
+
+/* Capa de movimiento orgánico - vetas finas */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.7;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(227,240,250,0.25) 0%, transparent 40%),
+    radial-gradient(circle at 70% 50%, rgba(195,224,244,0.2) 0%, transparent 35%),
+    radial-gradient(ellipse at 20% 70%, rgba(255,255,255,0.2) 0%, transparent 30%),
+    radial-gradient(circle at 55% 20%, rgba(227,240,250,0.18) 0%, transparent 35%),
+    radial-gradient(ellipse at 80% 80%, rgba(218,233,245,0.15) 0%, transparent 30%),
+    radial-gradient(ellipse at 10% 40%, rgba(212,175,55,0.04) 0%, transparent 25%),
+    radial-gradient(ellipse at 90% 60%, rgba(212,175,55,0.03) 0%, transparent 25%),
+    radial-gradient(circle at 45% 90%, rgba(227,240,250,0.15) 0%, transparent 30%);
+  animation: marble-flow 30s ease-in-out infinite alternate;
+}
+
+@keyframes marble-flow {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(10px, -8px) scale(1.015) rotate(0.5deg); }
+  50% { transform: translate(-5px, -12px) scale(0.99) rotate(-0.3deg); }
+  75% { transform: translate(-12px, 5px) scale(1.01) rotate(0.7deg); }
+  100% { transform: translate(6px, -5px) scale(1.005) rotate(-0.2deg); }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(227, 240, 250, 0.3); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #D4AF37, #C3E0F4); border-radius: 2px; }
+
+@keyframes float-slow { 0%,100% { transform: translateY(0) rotate(0deg); } 33% { transform: translateY(-18px) rotate(2deg); } 66% { transform: translateY(-8px) rotate(-1deg); } }
+@keyframes float-medium { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.03); } }
+@keyframes sparkle-twinkle { 0%,100% { opacity: 0; transform: scale(0) rotate(0deg); } 40% { opacity: 1; transform: scale(1) rotate(180deg); } 80% { opacity: 0.6; transform: scale(0.8) rotate(300deg); } }
+@keyframes glow-pulse { 0%,100% { box-shadow: 0 0 15px rgba(227,240,250,0.3), 0 0 30px rgba(227,240,250,0.1); } 50% { box-shadow: 0 0 30px rgba(227,240,250,0.5), 0 0 60px rgba(195,224,244,0.3), 0 0 90px rgba(227,240,250,0.15); } }
+@keyframes gold-glow-pulse { 0%,100% { box-shadow: 0 0 10px rgba(212,175,55,0.15), 0 0 20px rgba(212,175,55,0.05); } 50% { box-shadow: 0 0 25px rgba(212,175,55,0.3), 0 0 50px rgba(212,175,55,0.1); } }
+@keyframes shimmer-slide { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes book-pulse-glow { 0%,100% { filter: drop-shadow(0 0 20px rgba(227,240,250,0.4)) drop-shadow(0 0 60px rgba(227,240,250,0.15)); } 50% { filter: drop-shadow(0 0 40px rgba(227,240,250,0.6)) drop-shadow(0 0 80px rgba(195,224,244,0.3)) drop-shadow(0 0 120px rgba(227,240,250,0.1)); } }
+@keyframes slide-up-fade { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+
+/* === Cinematic Book Intro Keyframes === */
+@keyframes book-float {
+  0%, 100% { transform: translateY(0) rotateX(0deg); }
+  25% { transform: translateY(-12px) rotateX(1deg); }
+  50% { transform: translateY(-5px) rotateX(-0.5deg); }
+  75% { transform: translateY(-18px) rotateX(1.5deg); }
+}
+@keyframes book-glow-pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(227,240,250,0.2), 0 0 60px rgba(195,224,244,0.1); }
+  25% { box-shadow: 0 0 50px rgba(227,240,250,0.35), 0 0 100px rgba(195,224,244,0.2), 0 0 150px rgba(227,240,250,0.08); }
+  50% { box-shadow: 0 0 40px rgba(227,240,250,0.25), 0 0 80px rgba(212,175,55,0.1); }
+  75% { box-shadow: 0 0 60px rgba(227,240,250,0.3), 0 0 120px rgba(195,224,244,0.15), 0 0 180px rgba(227,240,250,0.05); }
+}
+@keyframes sparkle-twinkle-fast {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  30% { opacity: 1; transform: scale(1.2) rotate(120deg); }
+  60% { opacity: 0.5; transform: scale(0.7) rotate(240deg); }
+}
+@keyframes shimmer-text {
+  0% { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+@keyframes light-ray-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.05); }
+}
+@keyframes float-particle-up {
+  0% { transform: translateY(0) scale(0); opacity: 0; }
+  20% { opacity: 0.8; transform: scale(1); }
+  80% { opacity: 0.3; transform: scale(0.6); }
+  100% { transform: translateY(-100px) scale(0); opacity: 0; }
+}
+@keyframes page-glow {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 20px rgba(227,240,250,0.1)); }
+  50% { filter: brightness(1.1) drop-shadow(0 0 40px rgba(227,240,250,0.3)) drop-shadow(0 0 80px rgba(195,224,244,0.15)); }
+}
+@keyframes lock-unlock {
+  0% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(-10deg) scale(1.1); filter: brightness(1.5); }
+  60% { transform: rotate(5deg) scale(1.05); }
+  100% { transform: rotate(-15deg) scale(0.8); opacity: 0; }
+}
+@keyframes crown-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(212,175,55,0.3)) drop-shadow(0 0 20px rgba(212,175,55,0.1)); }
+  50% { filter: drop-shadow(0 0 16px rgba(212,175,55,0.5)) drop-shadow(0 0 40px rgba(212,175,55,0.2)) drop-shadow(0 0 60px rgba(212,175,55,0.1)); }
+}
+@keyframes magic-reveal {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  50% { clip-path: inset(0 0% 0 0); opacity: 1; }
+  100% { clip-path: inset(0 0% 0 0); opacity: 1; }
+}
+@keyframes dust-spiral {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0); opacity: 0; }
+  20% { opacity: 0.6; transform: translate(10px, -20px) rotate(45deg) scale(1); }
+  80% { opacity: 0.3; transform: translate(-10px, -80px) rotate(180deg) scale(0.5); }
+  100% { transform: translate(20px, -120px) rotate(270deg) scale(0); opacity: 0; }
+}
+
+.book-float { animation: book-float 6s ease-in-out infinite; }
+.book-glow { animation: book-glow-pulse 4s ease-in-out infinite; }
+.crown-glow { animation: crown-glow 3s ease-in-out infinite; }
+.page-glow { animation: page-glow 2s ease-in-out infinite; }
+.shimmer-text {
+  background: linear-gradient(90deg, #1E3A5F 0%, #E3F0FA 20%, #D4AF37 40%, #E3F0FA 60%, #1E3A5F 80%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 4s linear infinite;
+}
+@keyframes scale-in { 0% { opacity: 0; transform: scale(0.85); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes rotate-in { 0% { opacity: 0; transform: rotate(-5deg) scale(0.95); } 100% { opacity: 1; transform: rotate(0deg) scale(1); } }
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(227,240,250,0.3);
+  box-shadow: 0 8px 32px rgba(227,240,250,0.15);
+}
+
+.sky-glass {
+  background: linear-gradient(135deg, rgba(227,240,250,0.35), rgba(195,224,244,0.18));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(227,240,250,0.3);
+  box-shadow: 0 8px 32px rgba(227,240,250,0.1);
+}
+
+.text-glow-sky { text-shadow: 0 0 20px rgba(227,240,250,0.5), 0 0 40px rgba(195,224,244,0.3); }
+.glow-border { animation: glow-pulse 3s ease-in-out infinite; }
+.glow-gold { animation: gold-glow-pulse 3s ease-in-out infinite; }
+
+.section-container {
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) { .section-container { padding: 4rem 2rem; } }
+
+.perspective-1000 { perspective: 1000px; }
+.transform-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
