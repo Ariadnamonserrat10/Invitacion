@@ -78,7 +78,7 @@ export default function Home() {
         <MusicControl />
 
         <footer className="relative z-10 py-8 text-center px-6">
-          <p className="text-[9px] font-[var(--font-poppins)] tracking-wider" style={{ color: "rgba(58,90,122,0.2)" }}>
+          <p className="text-[14px] font-[var(--font-poppins)] tracking-wider" style={{ color: "rgba(58,90,122,0.2)" }}>
             — Esta invitación fue hecha con amor para michi —
           </p>
         </footer>

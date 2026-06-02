@@ -127,7 +127,7 @@ export default function ParentsSection() {
         </div>
 
         <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ margin: "-80px" }} transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-3 my-16">
+          className="flex items-center justify-center gap-3 my-20">
           <span className="h-px w-12" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.2))" }} />
           <span className="font-[var(--font-playfair)] italic text-sm" style={{ color: "rgba(212,175,55,0.3)" }}>✧</span>
           <span className="h-px w-12" style={{ background: "linear-gradient(270deg, transparent, rgba(212,175,55,0.2))" }} />

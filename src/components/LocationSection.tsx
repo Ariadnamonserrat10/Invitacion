@@ -21,8 +21,8 @@ export default function LocationSection() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Ceremonia Religiosa", place: "Parroquia de Nuestra Señora", addr: "Av. Principal #123, Centro", url: "https://maps.google.com" },
-            { title: "Recepción", place: "Salón de Eventos Los Ángeles", addr: "Blvd. de las Flores #456, Col. Centro", url: "https://maps.google.com" },
+            { title: "Ceremonia Religiosa", place: "Parroquia de Santa María de la Asunción", addr: "Av. Principal #123, Centro", url: "https://maps.app.goo.gl/SR8BtxkxVZop6cTw7" },
+            { title: "Recepción", place: "Salón las Brisas", addr: "Blvd. de las Flores #456, Col. Centro", url: "https://maps.app.goo.gl/X8CWMN162aTXK2846" },
           ].map((loc, i) => (
             <motion.div key={loc.title}
               initial={{ opacity: 0, scale: 0.9, rotateY: i === 0 ? -8 : 8 }}

@@ -2,7 +2,7 @@ let audio: HTMLAudioElement | null = null;
 
 export function getAudio(): HTMLAudioElement {
   if (!audio) {
-    audio = new Audio("/music/Fondo.mp3?v=1");
+    audio = new Audio("/music/Fondo.mp3");
     audio.loop = true;
     audio.volume = 0.35;
     audio.preload = "auto";

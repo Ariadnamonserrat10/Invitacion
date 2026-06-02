@@ -114,10 +114,6 @@ export default function CountdownSection() {
           >
             25 de Julio, 2026
           </p>
-          <p className="text-xs md:text-sm font-[var(--font-poppins)] font-light mt-2 tracking-[0.2em]"
-            style={{ color: "rgba(58,90,122,0.45)" }}>
-            2:00 PM
-          </p>
         </motion.div>
       </div>
     </section>
