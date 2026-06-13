@@ -10,8 +10,8 @@ const parents = [
 ];
 
 const godparents = [
+  { name: "Mauricio Garnica Martinez", role: "Padrino", desc: "Con orgullo y alegría", isMemorial: false },
   { name: "Leticia Aparicio Gómez", role: "Madrina", desc: "Con cariño y bendiciones", isMemorial: false },
-  { name: "Mauricio Garnica", role: "Padrino", desc: "Con orgullo y alegría", isMemorial: false },
 ];
 
 function PersonCard({ name, role, desc, index, isMemorial, variant }: {
@@ -51,27 +51,27 @@ function PersonCard({ name, role, desc, index, isMemorial, variant }: {
       transition={{ duration: 0.8, delay: index * 0.12 }}
       className="rounded-2xl p-8 md:p-10 text-center relative overflow-hidden mx-auto w-full"
       style={{
-        border: isMemorial ? "1.5px solid rgba(212,175,55,0.35)" : isParent ? "1px solid rgba(20,45,75,0.2)" : "1px solid rgba(58,90,122,0.12)",
+        border: isMemorial ? "1.5px solid rgba(52,93,137,0.35)" : isParent ? "1px solid rgba(20,45,75,0.2)" : "1px solid rgba(58,90,122,0.12)",
         maxWidth: 400,
         background: isMemorial
-          ? "linear-gradient(135deg, rgba(227,240,250,0.12), rgba(212,175,55,0.06), rgba(227,240,250,0.1))"
+          ? "linear-gradient(135deg, rgba(227,240,250,0.12), rgba(52,93,137,0.06), rgba(227,240,250,0.1))"
           : isParent ? bgDark : bgLight,
         boxShadow: isMemorial
-          ? "0 0 30px rgba(212,175,55,0.08), 0 0 60px rgba(227,240,250,0.06)"
+          ? "0 0 30px rgba(52,93,137,0.08), 0 0 60px rgba(227,240,250,0.06)"
           : isParent
             ? "0 0 20px rgba(20,45,75,0.06)"
             : "0 0 15px rgba(58,90,122,0.04)",
       }}
-      whileHover={{ scale: 1.04, borderColor: isMemorial ? "rgba(212,175,55,0.5)" : isParent ? "rgba(20,45,75,0.35)" : "rgba(58,90,122,0.25)", boxShadow: isMemorial ? "0 0 50px rgba(212,175,55,0.15)" : "0 0 30px rgba(58,90,122,0.08)", transition: { duration: 0.3 } }}
+      whileHover={{ scale: 1.04, borderColor: isMemorial ? "rgba(52,93,137,0.5)" : isParent ? "rgba(20,45,75,0.35)" : "rgba(58,90,122,0.25)", boxShadow: isMemorial ? "0 0 50px rgba(52,93,137,0.15)" : "0 0 30px rgba(58,90,122,0.08)", transition: { duration: 0.3 } }}
     >
       {isMemorial && (
         <>
           <motion.div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.08) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(52,93,137,0.08) 0%, transparent 70%)" }}
             animate={{ opacity: [0.3, 0.6, 0.3] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
           {particles.map((p, i) => (
             <motion.div key={`mp-${i}`} className="absolute w-1 h-1 rounded-full"
-              style={{ background: "#D4AF37", left: p.left }}
+              style={{ background: "#345D89", left: p.left }}
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: [0, -50 - (i % 3) * 15], opacity: [0, 0.5, 0] }}
               transition={{ duration: 3 + (i % 3), delay: p.delay, repeat: Infinity, ease: "easeOut" }} />
@@ -86,9 +86,9 @@ function PersonCard({ name, role, desc, index, isMemorial, variant }: {
         <h3 className="text-lg md:text-xl font-[var(--font-playfair)] font-semibold" style={{ color: isParent ? "#1E3A5F" : "rgba(30,58,95,0.75)" }}>
           {isMemorial && (
             <motion.span className="inline-block mr-2 text-xl md:text-2xl"
-              style={{ color: "#D4AF37" }}
+              style={{ color: "#000000" }}
               animate={{
-                textShadow: ["0 0 6px rgba(212,175,55,0.4)", "0 0 18px rgba(212,175,55,0.8)", "0 0 6px rgba(212,175,55,0.4)"],
+                textShadow: ["0 0 4px rgba(0,0,0,0.3), 0 0 8px rgba(0,0,0,0.15)", "0 0 10px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.25)", "0 0 4px rgba(0,0,0,0.3), 0 0 8px rgba(0,0,0,0.15)"],
                 scale: [1, 1.15, 1],
               }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
@@ -97,10 +97,10 @@ function PersonCard({ name, role, desc, index, isMemorial, variant }: {
           )}
           {name}
         </h3>
-        <p className="text-xs md:text-sm font-[var(--font-poppins)] font-light mt-2" style={{ color: isParent ? "rgba(30,58,95,0.5)" : "rgba(58,90,122,0.6)" }}>{desc}</p>
+        <p className="text-xs md:text-sm font-[var(--font-poppins)] font-light mt-2" style={{ color: isMemorial ? "#000000" : "rgba(52,93,137,0.75)" }}>{desc}</p>
         {isMemorial && (
           <motion.p className="text-[10px] mt-3 font-[var(--font-playfair)] italic"
-            style={{ color: "rgba(212,175,55,0.6)" }}
+            style={{ color: "#000000" }}
             animate={{ opacity: [0.4, 0.8, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
             Siempre en nuestro corazón
           </motion.p>
@@ -128,9 +128,9 @@ export default function ParentsSection() {
 
         <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ margin: "-80px" }} transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center gap-3 my-20">
-          <span className="h-px w-12" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.2))" }} />
-          <span className="font-[var(--font-playfair)] italic text-sm" style={{ color: "rgba(212,175,55,0.3)" }}>✧</span>
-          <span className="h-px w-12" style={{ background: "linear-gradient(270deg, transparent, rgba(212,175,55,0.2))" }} />
+          <span className="h-px w-12" style={{ background: "linear-gradient(90deg, transparent, rgba(52,93,137,0.2))" }} />
+          <span className="font-[var(--font-playfair)] italic text-sm" style={{ color: "rgba(0,0,0,0.25)" }}>✧</span>
+          <span className="h-px w-12" style={{ background: "linear-gradient(270deg, transparent, rgba(52,93,137,0.2))" }} />
         </motion.div>
 
         <div>

@@ -20,8 +20,8 @@ export default function InvitationSection() {
           quiero{' '}
           <span className="font-[var(--font-great-vibes)] text-xl md:text-2xl lg:text-3xl"
             style={{
-              color: "#D4AF37",
-              textShadow: "0 0 20px rgba(212,175,55,0.3)",
+              color: "#345D89",
+              textShadow: "0 0 20px rgba(52,93,137,0.3)",
             }}>
             invitarte a celebrar conmigo mis XV años
           </span>

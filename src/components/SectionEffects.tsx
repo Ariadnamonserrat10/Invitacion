@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import confetti from "canvas-confetti";
 
-const COLORS = ["#D4AF37", "#E3F0FA", "#C3E0F4", "#FFFFFF", "#F0D68A"];
+const COLORS = ["#345D89", "#E3F0FA", "#C3E0F4", "#FFFFFF", "#F0D68A"];
 
 export function ConfettiBurst({ trigger }: { trigger: boolean }) {
   const done = useRef(false);

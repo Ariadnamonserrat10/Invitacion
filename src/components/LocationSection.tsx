@@ -35,21 +35,21 @@ export default function LocationSection() {
               <motion.div
                 className="relative"
                 style={{
-                  border: "1px solid rgba(212,175,55,0.1)",
-                  background: "linear-gradient(160deg, rgba(227,240,250,0.15), rgba(212,175,55,0.03), rgba(227,240,250,0.1))",
+                  border: "1px solid rgba(52,93,137,0.1)",
+                  background: "linear-gradient(160deg, rgba(227,240,250,0.15), rgba(52,93,137,0.03), rgba(227,240,250,0.1))",
                   borderRadius: "1rem",
                   padding: "2rem",
-                  boxShadow: "0 4px 20px rgba(58,90,122,0.03), 0 0 40px rgba(212,175,55,0.02)",
+                  boxShadow: "0 4px 20px rgba(58,90,122,0.03), 0 0 40px rgba(52,93,137,0.02)",
                 }}
                 whileHover={{
                   scale: 1.03,
-                  borderColor: "rgba(212,175,55,0.25)",
-                  boxShadow: "0 8px 40px rgba(58,90,122,0.06), 0 0 60px rgba(212,175,55,0.04)",
+                  borderColor: "rgba(52,93,137,0.25)",
+                  boxShadow: "0 8px 40px rgba(58,90,122,0.06), 0 0 60px rgba(52,93,137,0.04)",
                   transition: { duration: 0.3 },
                 }}
               >
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.1), rgba(227,240,250,0.15))", border: "1px solid rgba(212,175,55,0.1)", boxShadow: "0 0 15px rgba(212,175,55,0.04)" }}>
+                  style={{ background: "linear-gradient(135deg, rgba(52,93,137,0.1), rgba(227,240,250,0.15))", border: "1px solid rgba(52,93,137,0.1)", boxShadow: "0 0 15px rgba(52,93,137,0.04)" }}>
                   <MapPin size={20} strokeWidth={1.5} style={{ color: "#3A5A7A" }} />
                 </div>
                 <h3 className="text-base md:text-lg font-[var(--font-playfair)] font-semibold mb-2" style={{ color: "#1E3A5F" }}>{loc.title}</h3>
@@ -58,7 +58,7 @@ export default function LocationSection() {
                 <motion.a href={loc.url} target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-[var(--font-poppins)] transition-all"
-                  style={{ background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.12)", color: "#1E3A5F" }}>
+                  style={{ background: "rgba(52,93,137,0.08)", border: "1px solid rgba(52,93,137,0.12)", color: "#1E3A5F" }}>
                   <ExternalLink size={14} strokeWidth={2} />
                   Ver en Google Maps
                 </motion.a>

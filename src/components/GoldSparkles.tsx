@@ -27,7 +27,7 @@ export default function GoldSparkles({ count = 10, className = "" }: { count?: n
 
   const renderShape = (shape: string, size: number) => {
     const s = size;
-    const gold = "#D4AF37";
+    const gold = "#345D89";
     const goldLight = "#F0D68A";
     switch (shape) {
       case "star":

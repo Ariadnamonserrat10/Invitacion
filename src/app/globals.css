@@ -1,12 +1,33 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "TheLadyBoulevard";
+  src: url("/fonts/The Lady in the Boulevard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bettermilk";
+  src: url("/fonts/Bettermilk.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KGPerfectPenmanship";
+  src: url("/fonts/KGPerfectPenmanship.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --color-sky-light: #E3F0FA;
   --color-sky-soft: #C3E0F4;
   --color-sky-dark: #3A5A7A;
   --color-sky-text: #1E3A5F;
-  --color-gold: #D4AF37;
-  --color-gold-light: #F0D68A;
+  --color-gold: #345D89;
+  --color-gold-light: #C9A0DC;
   --font-great-vibes: "Great Vibes", cursive;
   --font-allura: "Allura", cursive;
   --font-dancing: "Dancing Script", cursive;
@@ -49,9 +70,9 @@ body::before {
     radial-gradient(ellipse at 45% 25%, rgba(218,233,245,0.2) 0%, transparent 30%),
     radial-gradient(ellipse at 80% 75%, rgba(227,240,250,0.2) 0%, transparent 35%),
     /* Toques dorados sutiles */
-    radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.02) 0%, transparent 40%),
-    radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.02) 0%, transparent 40%);
+    radial-gradient(ellipse at 50% 50%, rgba(52,93,137,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(52,93,137,0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(52,93,137,0.02) 0%, transparent 40%);
 }
 
 /* Capa de movimiento orgánico - vetas finas */
@@ -67,8 +88,8 @@ body::after {
     radial-gradient(ellipse at 20% 70%, rgba(255,255,255,0.2) 0%, transparent 30%),
     radial-gradient(circle at 55% 20%, rgba(227,240,250,0.18) 0%, transparent 35%),
     radial-gradient(ellipse at 80% 80%, rgba(218,233,245,0.15) 0%, transparent 30%),
-    radial-gradient(ellipse at 10% 40%, rgba(212,175,55,0.04) 0%, transparent 25%),
-    radial-gradient(ellipse at 90% 60%, rgba(212,175,55,0.03) 0%, transparent 25%),
+    radial-gradient(ellipse at 10% 40%, rgba(52,93,137,0.04) 0%, transparent 25%),
+    radial-gradient(ellipse at 90% 60%, rgba(52,93,137,0.03) 0%, transparent 25%),
     radial-gradient(circle at 45% 90%, rgba(227,240,250,0.15) 0%, transparent 30%);
   animation: marble-flow 30s ease-in-out infinite alternate;
 }
@@ -83,13 +104,13 @@ body::after {
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: rgba(227, 240, 250, 0.3); }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #D4AF37, #C3E0F4); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #345D89, #C3E0F4); border-radius: 2px; }
 
 @keyframes float-slow { 0%,100% { transform: translateY(0) rotate(0deg); } 33% { transform: translateY(-18px) rotate(2deg); } 66% { transform: translateY(-8px) rotate(-1deg); } }
 @keyframes float-medium { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.03); } }
 @keyframes sparkle-twinkle { 0%,100% { opacity: 0; transform: scale(0) rotate(0deg); } 40% { opacity: 1; transform: scale(1) rotate(180deg); } 80% { opacity: 0.6; transform: scale(0.8) rotate(300deg); } }
 @keyframes glow-pulse { 0%,100% { box-shadow: 0 0 15px rgba(227,240,250,0.3), 0 0 30px rgba(227,240,250,0.1); } 50% { box-shadow: 0 0 30px rgba(227,240,250,0.5), 0 0 60px rgba(195,224,244,0.3), 0 0 90px rgba(227,240,250,0.15); } }
-@keyframes gold-glow-pulse { 0%,100% { box-shadow: 0 0 10px rgba(212,175,55,0.15), 0 0 20px rgba(212,175,55,0.05); } 50% { box-shadow: 0 0 25px rgba(212,175,55,0.3), 0 0 50px rgba(212,175,55,0.1); } }
+@keyframes gold-glow-pulse { 0%,100% { box-shadow: 0 0 10px rgba(52,93,137,0.15), 0 0 20px rgba(52,93,137,0.05); } 50% { box-shadow: 0 0 25px rgba(52,93,137,0.3), 0 0 50px rgba(52,93,137,0.1); } }
 @keyframes shimmer-slide { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
 @keyframes book-pulse-glow { 0%,100% { filter: drop-shadow(0 0 20px rgba(227,240,250,0.4)) drop-shadow(0 0 60px rgba(227,240,250,0.15)); } 50% { filter: drop-shadow(0 0 40px rgba(227,240,250,0.6)) drop-shadow(0 0 80px rgba(195,224,244,0.3)) drop-shadow(0 0 120px rgba(227,240,250,0.1)); } }
 @keyframes slide-up-fade { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
@@ -104,7 +125,7 @@ body::after {
 @keyframes book-glow-pulse {
   0%, 100% { box-shadow: 0 0 30px rgba(227,240,250,0.2), 0 0 60px rgba(195,224,244,0.1); }
   25% { box-shadow: 0 0 50px rgba(227,240,250,0.35), 0 0 100px rgba(195,224,244,0.2), 0 0 150px rgba(227,240,250,0.08); }
-  50% { box-shadow: 0 0 40px rgba(227,240,250,0.25), 0 0 80px rgba(212,175,55,0.1); }
+  50% { box-shadow: 0 0 40px rgba(227,240,250,0.25), 0 0 80px rgba(52,93,137,0.1); }
   75% { box-shadow: 0 0 60px rgba(227,240,250,0.3), 0 0 120px rgba(195,224,244,0.15), 0 0 180px rgba(227,240,250,0.05); }
 }
 @keyframes sparkle-twinkle-fast {
@@ -137,8 +158,8 @@ body::after {
   100% { transform: rotate(-15deg) scale(0.8); opacity: 0; }
 }
 @keyframes crown-glow {
-  0%, 100% { filter: drop-shadow(0 0 8px rgba(212,175,55,0.3)) drop-shadow(0 0 20px rgba(212,175,55,0.1)); }
-  50% { filter: drop-shadow(0 0 16px rgba(212,175,55,0.5)) drop-shadow(0 0 40px rgba(212,175,55,0.2)) drop-shadow(0 0 60px rgba(212,175,55,0.1)); }
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(52,93,137,0.3)) drop-shadow(0 0 20px rgba(52,93,137,0.1)); }
+  50% { filter: drop-shadow(0 0 16px rgba(52,93,137,0.5)) drop-shadow(0 0 40px rgba(52,93,137,0.2)) drop-shadow(0 0 60px rgba(52,93,137,0.1)); }
 }
 @keyframes magic-reveal {
   0% { clip-path: inset(0 100% 0 0); opacity: 0; }
@@ -157,7 +178,7 @@ body::after {
 .crown-glow { animation: crown-glow 3s ease-in-out infinite; }
 .page-glow { animation: page-glow 2s ease-in-out infinite; }
 .shimmer-text {
-  background: linear-gradient(90deg, #1E3A5F 0%, #E3F0FA 20%, #D4AF37 40%, #E3F0FA 60%, #1E3A5F 80%);
+  background: linear-gradient(90deg, #1E3A5F 0%, #E3F0FA 20%, #345D89 40%, #E3F0FA 60%, #1E3A5F 80%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -201,3 +222,11 @@ body::after {
 .perspective-1000 { perspective: 1000px; }
 .transform-3d { transform-style: preserve-3d; }
 .backface-hidden { backface-visibility: hidden; }
+
+.titulo-lettering {
+  font-family: "Bettermilk", cursive;
+}
+
+.kg-perfect {
+  font-family: "KGPerfectPenmanship", cursive;
+}

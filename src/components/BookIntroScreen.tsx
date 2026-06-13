@@ -102,7 +102,7 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
 
     tl.to(nameRef.current, { clipPath: "inset(0 0% 0 0)", duration: 2.2, ease: "power3.out" }, 12);
     tl.to(nameRef.current, {
-      textShadow: "0 0 30px rgba(212,175,55,0.3), 0 0 60px rgba(212,175,55,0.15), 0 0 100px rgba(227,240,250,0.2)",
+      textShadow: "0 0 30px rgba(52,93,137,0.3), 0 0 60px rgba(52,93,137,0.15), 0 0 100px rgba(227,240,250,0.2)",
       duration: 1.5, ease: "sine.inOut",
     }, 13.5);
     tl.call(() => triggerNameSweep(), [], 12);
@@ -122,8 +122,8 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
       const starShape = isStar ? `polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)` : "50%";
       el.style.cssText = `
         position:absolute;width:${size * 2.5}px;height:${size * 2.5}px;
-        ${isStar ? `clip-path:${starShape};background:${isGold ? "#D4AF37" : "#FFF5D6"};` : `border-radius:50%;background:${isGold ? "#D4AF37" : "#E3F0FA"};`}
-        box-shadow:0 0 ${size * 5}px ${isGold ? "rgba(212,175,55,0.6)" : "rgba(227,240,250,0.4)"};
+        ${isStar ? `clip-path:${starShape};background:${isGold ? "#345D89" : "#FFF5D6"};` : `border-radius:50%;background:${isGold ? "#345D89" : "#E3F0FA"};`}
+        box-shadow:0 0 ${size * 5}px ${isGold ? "rgba(52,93,137,0.6)" : "rgba(227,240,250,0.4)"};
         pointer-events:none;opacity:0;
         transform:scale(0) ${isStar ? "rotate(0deg)" : ""};
       `;
@@ -165,7 +165,7 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
         position:absolute;width:${isStar ? size * 3 : size}px;height:${isStar ? size * 3 : size}px;
         left:0;top:${(i / count) * 100}%;
         ${isStar ? `clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);background:${gold};` : `border-radius:50%;background:${gold};`}
-        box-shadow:0 0 ${size * 5}px rgba(212,175,55,0.5);
+        box-shadow:0 0 ${size * 5}px rgba(52,93,137,0.5);
         pointer-events:none;opacity:0;
       `;
       container.appendChild(el);
@@ -231,7 +231,7 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
                   className="absolute" style={{
                     width: `${10 + ((i * 17) % 30)}%`, height: "2px",
                     left: `${(i * 31) % 100}%`, top: `${(i * 47) % 100}%`,
-                    background: `linear-gradient(90deg, transparent, ${i % 3 === 0 ? "rgba(212,175,55,0.12)" : "rgba(227,240,250,0.1)"}, transparent)`,
+                    background: `linear-gradient(90deg, transparent, ${i % 3 === 0 ? "rgba(52,93,137,0.12)" : "rgba(227,240,250,0.1)"}, transparent)`,
                     transform: `rotate(${(i * 53) % 360}deg)`, filter: "blur(1px)",
                   }}
                   animate={{ opacity: [0, 0.4, 0], scaleX: [0, 1, 0] }}
@@ -247,9 +247,9 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
               <div ref={spineRef} className="absolute" style={{
                 width: "1.2vmin", height: "100%", left: "50%", marginLeft: "-0.6vmin", top: 0, zIndex: 4,
                 background: "linear-gradient(180deg, #162D4A 0%, #1E3A5F 40%, #2C5A8A 60%, #1E3A5F 100%)",
-                boxShadow: "0 0 15px rgba(0,0,0,0.3), inset 0 0 10px rgba(212,175,55,0.1)",
-                borderLeft: "1px solid rgba(212,175,55,0.15)",
-                borderRight: "1px solid rgba(212,175,55,0.15)",
+                boxShadow: "0 0 15px rgba(0,0,0,0.3), inset 0 0 10px rgba(52,93,137,0.1)",
+                borderLeft: "1px solid rgba(52,93,137,0.15)",
+                borderRight: "1px solid rgba(52,93,137,0.15)",
                 borderRadius: "0.3vmin",
               }} />
 
@@ -295,15 +295,15 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
                   </h1>
 
                   <div className="w-2/3 h-px mx-auto my-3" style={{
-                    background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent)",
+                    background: "linear-gradient(90deg, transparent, rgba(52,93,137,0.4), transparent)",
                   }} />
 
                   <div ref={nameRef} className="relative" style={{ clipPath: "inset(0 100% 0 0)" }}>
                     <h2
                       className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[var(--font-great-vibes)] leading-tight"
                       style={{
-                        color: "#D4AF37",
-                        textShadow: "0 0 20px rgba(212,175,55,0.4), 0 0 40px rgba(212,175,55,0.2), 0 0 80px rgba(212,175,55,0.1)",
+                        color: "#345D89",
+                        textShadow: "0 0 20px rgba(52,93,137,0.4), 0 0 40px rgba(52,93,137,0.2), 0 0 80px rgba(52,93,137,0.1)",
                       }}
                     >
                       𝓢𝓾𝓻𝓲 𝓜𝓲𝓬𝓱𝓮𝓵𝓵𝓮 𝓥𝓮𝓵𝓪𝓼𝓬𝓸 𝓐𝓹𝓪𝓻𝓲𝓬𝓲𝓸
@@ -322,43 +322,43 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
                 width: "50%", height: "100%", left: 0, top: 0, zIndex: 8,
                 transformOrigin: "100% 50%",
                 background: "linear-gradient(165deg, #1E3A5F 0%, #2C5A8A 25%, #1E3A5F 50%, #162D4A 75%, #1E3A5F 100%)",
-                border: "2px solid rgba(212,175,55,0.3)",
-                borderRight: "1px solid rgba(212,175,55,0.1)",
+                border: "2px solid rgba(52,93,137,0.3)",
+                borderRight: "1px solid rgba(52,93,137,0.1)",
                 borderTopLeftRadius: "1.5vmin", borderBottomLeftRadius: "1.5vmin",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.35), inset 0 0 50px rgba(0,0,0,0.15)",
                 overflow: "hidden",
               }}>
                 <div className="absolute inset-[5%] rounded-[1vmin]" style={{
-                  border: "1px solid rgba(212,175,55,0.18)", borderRight: "none",
+                  border: "1px solid rgba(52,93,137,0.18)", borderRight: "none",
                   borderTopLeftRadius: "1vmin", borderBottomLeftRadius: "1vmin",
                 }} />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(212,175,55,0.04) 0%, transparent 30%, transparent 70%, rgba(212,175,55,0.02) 100%)" }} />
-                <div className="absolute" style={{ top: "5%", right: "8%", width: "35%", height: "1px", background: "linear-gradient(90deg, rgba(212,175,55,0.25), transparent)" }} />
-                <div className="absolute" style={{ bottom: "5%", right: "8%", width: "25%", height: "1px", background: "linear-gradient(90deg, rgba(212,175,55,0.12), transparent)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(52,93,137,0.04) 0%, transparent 30%, transparent 70%, rgba(52,93,137,0.02) 100%)" }} />
+                <div className="absolute" style={{ top: "5%", right: "8%", width: "35%", height: "1px", background: "linear-gradient(90deg, rgba(52,93,137,0.25), transparent)" }} />
+                <div className="absolute" style={{ bottom: "5%", right: "8%", width: "25%", height: "1px", background: "linear-gradient(90deg, rgba(52,93,137,0.12), transparent)" }} />
               </div>
 
               <div ref={coverRightRef} className="absolute rounded-r-[1.5vmin]" style={{
                 width: "50%", height: "100%", right: 0, top: 0, zIndex: 8,
                 transformOrigin: "0% 50%",
                 background: "linear-gradient(195deg, #1E3A5F 0%, #2C5A8A 25%, #1E3A5F 50%, #162D4A 75%, #1E3A5F 100%)",
-                border: "2px solid rgba(212,175,55,0.3)",
-                borderLeft: "1px solid rgba(212,175,55,0.1)",
+                border: "2px solid rgba(52,93,137,0.3)",
+                borderLeft: "1px solid rgba(52,93,137,0.1)",
                 borderTopRightRadius: "1.5vmin", borderBottomRightRadius: "1.5vmin",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.35), inset 0 0 50px rgba(0,0,0,0.15)",
                 overflow: "hidden",
               }}>
                 <div className="absolute inset-[5%] rounded-[1vmin]" style={{
-                  border: "1px solid rgba(212,175,55,0.18)", borderLeft: "none",
+                  border: "1px solid rgba(52,93,137,0.18)", borderLeft: "none",
                   borderTopRightRadius: "1vmin", borderBottomRightRadius: "1vmin",
                 }} />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(212,175,55,0.04) 0%, transparent 30%, transparent 70%, rgba(212,175,55,0.02) 100%)" }} />
-                <div className="absolute" style={{ top: "5%", left: "8%", width: "35%", height: "1px", background: "linear-gradient(270deg, rgba(212,175,55,0.25), transparent)" }} />
-                <div className="absolute" style={{ bottom: "5%", left: "8%", width: "25%", height: "1px", background: "linear-gradient(270deg, rgba(212,175,55,0.12), transparent)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(52,93,137,0.04) 0%, transparent 30%, transparent 70%, rgba(52,93,137,0.02) 100%)" }} />
+                <div className="absolute" style={{ top: "5%", left: "8%", width: "35%", height: "1px", background: "linear-gradient(270deg, rgba(52,93,137,0.25), transparent)" }} />
+                <div className="absolute" style={{ bottom: "5%", left: "8%", width: "25%", height: "1px", background: "linear-gradient(270deg, rgba(52,93,137,0.12), transparent)" }} />
               </div>
 
               <div ref={monogramRef} className="absolute inset-0 flex items-center justify-center" style={{ zIndex: 9, pointerEvents: "none" }}>
                 <div className="relative text-center -mt-4">
-                  <svg viewBox="0 0 70 50" className="w-10 h-8 md:w-14 md:h-10 mx-auto mb-1" style={{ filter: "drop-shadow(0 0 10px rgba(212,175,55,0.3))" }}>
+                  <svg viewBox="0 0 70 50" className="w-10 h-8 md:w-14 md:h-10 mx-auto mb-1" style={{ filter: "drop-shadow(0 0 10px rgba(52,93,137,0.3))" }}>
                     <defs>
                       <linearGradient id="cr-s" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#E8EDF5" /><stop offset="30%" stopColor="#FFFFFF" />
@@ -366,15 +366,15 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
                       </linearGradient>
                     </defs>
                     <path d="M6 42 L6 18 L18 28 L35 5 L52 28 L64 18 L64 42 Z" fill="url(#cr-s)" opacity="0.85" />
-                    <path d="M6 42 L6 18 L18 28 L35 5 L52 28 L64 18 L64 42 Z" fill="none" stroke="rgba(212,175,55,0.25)" strokeWidth="0.5" />
+                    <path d="M6 42 L6 18 L18 28 L35 5 L52 28 L64 18 L64 42 Z" fill="none" stroke="rgba(52,93,137,0.25)" strokeWidth="0.5" />
                     <circle cx="35" cy="18" r="2.5" fill="#FFFFFF" opacity="0.5" />
-                    <circle cx="35" cy="18" r="1.2" fill="rgba(212,175,55,0.4)" />
+                    <circle cx="35" cy="18" r="1.2" fill="rgba(52,93,137,0.4)" />
                     <rect x="24" y="37" width="22" height="5" rx="1.5" fill="url(#cr-s)" opacity="0.25" />
-                    <path d="M16 24 Q20 20 24 24" stroke="#D4AF37" strokeWidth="0.8" fill="none" opacity="0.3" />
-                    <path d="M46 24 Q50 20 54 24" stroke="#D4AF37" strokeWidth="0.8" fill="none" opacity="0.3" />
+                    <path d="M16 24 Q20 20 24 24" stroke="#345D89" strokeWidth="0.8" fill="none" opacity="0.3" />
+                    <path d="M46 24 Q50 20 54 24" stroke="#345D89" strokeWidth="0.8" fill="none" opacity="0.3" />
                   </svg>
 
-                  <svg viewBox="0 0 80 90" className="w-20 h-22 md:w-24 md:h-26 mx-auto" style={{ filter: "drop-shadow(0 0 12px rgba(227,240,250,0.3)) drop-shadow(0 0 25px rgba(212,175,55,0.1))" }}>
+                  <svg viewBox="0 0 80 90" className="w-20 h-22 md:w-24 md:h-26 mx-auto" style={{ filter: "drop-shadow(0 0 12px rgba(227,240,250,0.3)) drop-shadow(0 0 25px rgba(52,93,137,0.1))" }}>
                     <defs>
                       <linearGradient id="s-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#FFFFFF" />
@@ -443,7 +443,7 @@ export default function BookIntroScreen({ onIntroComplete }: { onIntroComplete?:
                 </div>
                 {msgParticles.map((p, i) => (
                   <motion.div key={`mp-${i}`} className="absolute w-1 h-1 rounded-full"
-                    style={{ background: p.isGold ? "#D4AF37" : "#E3F0FA", boxShadow: `0 0 6px ${p.isGold ? "rgba(212,175,55,0.5)" : "rgba(227,240,250,0.4)"}` }}
+                    style={{ background: p.isGold ? "#345D89" : "#E3F0FA", boxShadow: `0 0 6px ${p.isGold ? "rgba(52,93,137,0.5)" : "rgba(227,240,250,0.4)"}` }}
                     animate={{ x: [p.startX, p.endX], y: [p.startY, p.endY], opacity: [0, 0.6, 0] }}
                     transition={{ duration: p.dur, repeat: Infinity, delay: p.del, ease: "easeInOut" }}
                   />

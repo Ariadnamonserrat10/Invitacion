@@ -105,7 +105,7 @@ export default function CountdownSection() {
           className="mt-12 text-center"
         >
           <div className="h-px w-16 mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent)" }} />
-          <p className="font-[var(--font-great-vibes)] leading-tight"
+          <p className="kg-perfect leading-tight"
             style={{
               color: "#D4AF37",
               fontSize: "clamp(1.8rem, 7vw, 4rem)",

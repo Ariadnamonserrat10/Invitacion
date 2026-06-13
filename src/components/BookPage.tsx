@@ -47,9 +47,9 @@ export default function BookPage({ children, id, className = "" }: { children: R
             "0 2px 4px rgba(0,0,0,0.02)",
             "0 8px 24px rgba(0,0,0,0.04)",
             "0 20px 60px rgba(0,0,0,0.06)",
-            "0 1px 0 rgba(212,175,55,0.06) inset",
+            "0 1px 0 rgba(52,93,137,0.06) inset",
           ].join(","),
-          border: "1px solid rgba(212,175,55,0.08)",
+          border: "1px solid rgba(52,93,137,0.08)",
           transformStyle: "preserve-3d",
         }}
       >
@@ -57,7 +57,7 @@ export default function BookPage({ children, id, className = "" }: { children: R
           className="absolute inset-0 pointer-events-none rounded-[2vmin]"
           style={{
             background: [
-              "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 10%, transparent 90%, rgba(212,175,55,0.02) 100%)",
+              "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 10%, transparent 90%, rgba(52,93,137,0.02) 100%)",
               "repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(195,224,244,0.04) 28px, rgba(195,224,244,0.04) 29px)",
             ].join(","),
           }}
@@ -66,7 +66,7 @@ export default function BookPage({ children, id, className = "" }: { children: R
         <div
           className="absolute right-0 top-0 bottom-0 w-[3px] pointer-events-none"
           style={{
-            background: "linear-gradient(180deg, rgba(212,175,55,0.06), rgba(195,224,244,0.04), rgba(212,175,55,0.06))",
+            background: "linear-gradient(180deg, rgba(52,93,137,0.06), rgba(195,224,244,0.04), rgba(52,93,137,0.06))",
             boxShadow: "-1px 0 2px rgba(0,0,0,0.02)",
           }}
         />
@@ -78,7 +78,7 @@ export default function BookPage({ children, id, className = "" }: { children: R
         <div
           className="absolute bottom-0 left-[5%] right-[5%] h-[3px] pointer-events-none"
           style={{
-            background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.04), rgba(195,224,244,0.06), rgba(212,175,55,0.04), transparent)",
+            background: "linear-gradient(90deg, transparent, rgba(52,93,137,0.04), rgba(195,224,244,0.06), rgba(52,93,137,0.04), transparent)",
           }}
         />
 
@@ -88,7 +88,7 @@ export default function BookPage({ children, id, className = "" }: { children: R
             disabled={isFirst}
             className="flex items-center gap-2 text-xs tracking-wider uppercase font-[var(--font-cinzel)] transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none"
             style={{ color: "rgba(58,90,122,0.4)" }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(212,175,55,0.7)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(52,93,137,0.7)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(58,90,122,0.4)"; }}
           >
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
@@ -106,7 +106,7 @@ export default function BookPage({ children, id, className = "" }: { children: R
             disabled={isLast}
             className="flex items-center gap-2 text-xs tracking-wider uppercase font-[var(--font-cinzel)] transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none"
             style={{ color: "rgba(58,90,122,0.4)" }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(212,175,55,0.7)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(52,93,137,0.7)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(58,90,122,0.4)"; }}
           >
             <span className="hidden sm:inline">Siguiente</span>

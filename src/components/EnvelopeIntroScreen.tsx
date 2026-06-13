@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import SplitType from "split-type";
 import { playAudio, resetAudio, setupAutoplay } from "@/lib/audio";
 
 function makeParticle(container: HTMLElement, css: string): HTMLDivElement {
@@ -18,6 +19,7 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
   const nameRef = useRef<HTMLDivElement>(null);
   const nameShineRef = useRef<HTMLDivElement>(null);
   const dividerRef = useRef<HTMLDivElement>(null);
+  const tituloRef = useRef<HTMLHeadingElement>(null);
 
   const [mounted, setMounted] = useState(false);
 
@@ -59,8 +61,8 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
     for (let i = 0; i < 10; i++) {
       const sp = makeParticle(sparklesRef.current!, `
         position:absolute;width:2.5px;height:2.5px;border-radius:50%;
-        background:${i%3===0?"#FFFFFF":"#D4AF37"};
-        box-shadow:0 0 8px ${i%3===0?"rgba(255,255,255,0.5)":"rgba(212,175,55,0.5)"};
+        background:${i%3===0?"#FFFFFF":"#345D89"};
+        box-shadow:0 0 8px ${i%3===0?"rgba(255,255,255,0.5)":"rgba(52,93,137,0.5)"};
         pointer-events:none;z-index:20;
       `);
       const ang = (i/10)*360;
@@ -78,11 +80,23 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
     }, 3.5);
     tl.to(dividerRef.current, { scaleX: 1, opacity: 1, duration: 0.8, ease: "power3.out" }, 3.8);
 
-    /* ── Name reveals with golden shine + sparkle burst ── */
-    tl.to(nameRef.current, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 2, ease: "power3.out" }, 4.5);
+    /* ── Name reveals with SplitType letter-by-letter + golden shine ── */
+    tl.call(() => {
+      gsap.set(nameRef.current, { opacity: 1, clipPath: "inset(0 0% 0 0)" });
+      const split = new SplitType(tituloRef.current!, { types: "chars" });
+      gsap.fromTo(split.chars,
+        { opacity: 0, scale: 0.85, filter: "blur(6px)", textShadow: "0 0 0px rgba(75,45,142,0)" },
+        {
+          opacity: 1, scale: 1, filter: "blur(0px)",
+          textShadow: "0 0 14px rgba(52,93,137,0.35)",
+          duration: 0.7, stagger: 0.1, ease: "power2.out",
+          onComplete: () => split.revert(),
+        }
+      );
+    }, [], 4.5);
     tl.to(nameShineRef.current, { opacity: 0.7, x: "120%", duration: 1.8, ease: "power2.inOut" }, 4.7);
     tl.to(nameRef.current, {
-      textShadow: "0 0 40px rgba(212,175,55,0.45), 0 0 80px rgba(212,175,55,0.25), 0 0 120px rgba(227,240,250,0.15)",
+      textShadow: "0 0 40px rgba(52,93,137,0.45), 0 0 80px rgba(52,93,137,0.25), 0 0 120px rgba(227,240,250,0.15)",
       duration: 1.2, ease: "sine.inOut",
     }, 5.5);
     tl.to(nameShineRef.current, { opacity: 0, duration: 0.3, ease: "sine.in" }, 6.2);
@@ -129,8 +143,8 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
     for (let i = 0; i < 12; i++) {
       const fp = makeParticle(sparklesRef.current!, `
         position:absolute;width:${1.5+(i%3)}px;height:${1.5+(i%3)}px;border-radius:50%;
-        background:${i%4===0?"#E3F0FA":i%4===1?"#FFFFFF":"#D4AF37"};
-        box-shadow:0 0 6px ${i%4===0?"rgba(227,240,250,0.4)":i%4===1?"rgba(255,255,255,0.3)":"rgba(212,175,55,0.4)"};
+        background:${i%4===0?"#E3F0FA":i%4===1?"#FFFFFF":"#345D89"};
+        box-shadow:0 0 6px ${i%4===0?"rgba(227,240,250,0.4)":i%4===1?"rgba(255,255,255,0.3)":"rgba(52,93,137,0.4)"};
         pointer-events:none;z-index:18;opacity:0;
       `);
       tl.set(fp, { left: `${35+(i*3)%30}%`, top: "55%", scale: 0 }, 6.7+i*0.05);
@@ -140,11 +154,11 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
 
     /* Glow pulse on name */
     tl.to(nameRef.current, {
-      textShadow: "0 0 50px rgba(212,175,55,0.6), 0 0 100px rgba(212,175,55,0.3), 0 0 150px rgba(227,240,250,0.2)",
+      textShadow: "0 0 50px rgba(52,93,137,0.6), 0 0 100px rgba(52,93,137,0.3), 0 0 150px rgba(227,240,250,0.2)",
       duration: 0.5, ease: "sine.inOut",
     }, 7);
     tl.to(nameRef.current, {
-      textShadow: "0 0 30px rgba(212,175,55,0.4), 0 0 60px rgba(212,175,55,0.2), 0 0 100px rgba(227,240,250,0.1)",
+      textShadow: "0 0 30px rgba(52,93,137,0.4), 0 0 60px rgba(52,93,137,0.2), 0 0 100px rgba(227,240,250,0.1)",
       duration: 0.5, ease: "sine.inOut",
     }, 7.8);
 
@@ -217,21 +231,21 @@ export default function EnvelopeIntroScreen({ onDone }: { onDone?: () => void })
 
           <div ref={dividerRef} className="h-px mx-auto my-4 md:my-6" style={{
             width: "35%",
-            background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent)",
+            background: "linear-gradient(90deg, transparent, rgba(52,93,137,0.2), transparent)",
             transformOrigin: "center center",
           }} />
 
           <div ref={nameRef} className="relative overflow-hidden" style={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}>
-            <h2 className="font-[var(--font-great-vibes)] leading-tight relative z-10"
+            <h2 ref={tituloRef} className="titulo-lettering leading-tight relative z-10"
               style={{
-                color: "#D4AF37",
+                color: "#345D89",
                 fontSize: "clamp(1.6rem, 6.5vmin, 4.5rem)",
-                textShadow: "0 0 20px rgba(212,175,55,0.2)",
+                textShadow: "0 0 20px rgba(52,93,137,0.2)",
               }}>
               Suri Michelle Velasco Aparicio
             </h2>
             <div ref={nameShineRef} className="absolute inset-0 z-20 pointer-events-none" style={{
-              background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), rgba(212,175,55,0.2), rgba(255,255,255,0.15), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), rgba(52,93,137,0.2), rgba(255,255,255,0.15), transparent)",
               width: "200%",
               transform: "skewX(-20deg)",
             }} />

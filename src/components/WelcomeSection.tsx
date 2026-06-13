@@ -19,7 +19,7 @@ export default function WelcomeSection() {
         </motion.p>
 
         <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ margin: "-80px" }} transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
-          className="h-px w-28 mx-auto mb-12" style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent)" }} />
+          className="h-px w-28 mx-auto mb-12" style={{ background: "linear-gradient(90deg, transparent, rgba(52,93,137,0.2), transparent)" }} />
 
         <motion.p initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: "-80px" }} transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="text-base md:text-lg leading-relaxed md:leading-8 font-[var(--font-poppins)] font-light mb-8"
